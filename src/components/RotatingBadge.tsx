@@ -8,7 +8,7 @@ export function RotatingBadge({ className = '' }: { className?: string }) {
         </defs>
         <text fontSize="8" letterSpacing="2.2" fill="#F5EBDD">
           <textPath href="#badge-circle-path" startOffset="0%">
-            QAPHI · CAFÉ DE ESPECIALIDAD · QAPHI · CAFÉ DE ESPECIALIDAD ·
+            QAPHI · THE ORIGINAL COFFEE · QAPHI · THE ORIGINAL COFFEE ·
           </textPath>
         </text>
       </svg>
