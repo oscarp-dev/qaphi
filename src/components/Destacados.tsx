@@ -29,7 +29,7 @@ export function Destacados() {
         <Reveal className="md:col-span-3">
           <a
             href="#"
-            className="group relative block aspect-[4/3] sm:aspect-[16/8] overflow-hidden rounded-3xl"
+            className="group relative block aspect-[4/3] overflow-hidden rounded-3xl"
           >
             <img
               src={FEATURED.src}
