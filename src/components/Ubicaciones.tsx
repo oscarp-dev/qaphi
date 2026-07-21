@@ -39,7 +39,7 @@ export function Ubicaciones() {
         </div>
       </div>
       <div className="flex-1 basis-[380px] min-w-[280px]">
-        <div className="border border-umber overflow-hidden aspect-[4/3] min-h-[340px]">
+        <div className="w-full border border-umber overflow-hidden aspect-[4/3] min-h-[340px]">
           <iframe
             src={mapSrc}
             className="w-full h-full border-0 [filter:sepia(.12)_saturate(1.05)]"

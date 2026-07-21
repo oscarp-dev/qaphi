@@ -4,8 +4,8 @@ import { PillButton } from './PillButton'
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen grid grid-cols-1 md:grid-cols-[1fr_1.3fr] bg-cream">
-      <div className="relative flex flex-col justify-center gap-8 md:gap-10 px-[6vw] py-[16vw] md:py-[9vw] z-[1]">
+    <section className="relative grid grid-cols-1 md:min-h-screen md:grid-cols-[1fr_1.3fr] bg-cream">
+      <div className="relative flex flex-col justify-center gap-8 md:gap-10 px-[6vw] py-20 md:py-[9vw] z-[1]">
         <Eyebrow>ALICANTE</Eyebrow>
         <h1 className="m-0 font-serif font-normal leading-[0.92] text-ink text-[clamp(56px,15vw,140px)] md:text-[clamp(64px,8.2vw,140px)]">
           QAPHI
