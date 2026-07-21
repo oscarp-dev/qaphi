@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink font-sans font-light antialiased overflow-x-hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    @apply text-ink;
+  }
+}
