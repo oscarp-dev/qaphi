@@ -8,7 +8,7 @@ export function Hero() {
   const parallaxRef = useParallax<HTMLImageElement>(0.15, 20)
 
   return (
-    <section className="relative min-h-screen bg-cream md:h-[calc(100vh-76px)] overflow-hidden flex items-center justify-center">
+    <section className="relative h-[calc(100vh-72px)] bg-cream overflow-hidden flex items-center justify-center">
       <div className="absolute inset-0 overflow-hidden">
         <img
           ref={parallaxRef}
