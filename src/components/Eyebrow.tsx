@@ -10,7 +10,7 @@ export function Eyebrow({
   style?: CSSProperties
 }) {
   return (
-    <span className={`font-medium text-[13px] text-umber tracking-[.12em] ${className}`} style={style}>
+    <span className={`font-medium text-[13px] text-ink/60 tracking-[.12em] ${className}`} style={style}>
       {children}
     </span>
   )

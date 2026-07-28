@@ -1,3 +1,4 @@
+import { Loader } from './components/Loader'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { QuienesSomos } from './components/QuienesSomos'
@@ -12,6 +13,7 @@ import { Footer } from './components/Footer'
 function App() {
   return (
     <div className="bg-cream text-ink">
+      <Loader />
       <Header />
       <main>
         <Hero />

@@ -4,13 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream: '#F5EBDD',
-        tan: '#D9C3A5',
-        ink: '#3B261D',
-        umber: '#6B4A3A',
+        cream: '#FFFFFF',
+        bone: '#F6F2EB',
+        ink: '#151515',
         accent: {
-          DEFAULT: '#D13B53',
-          dark: '#B32E46',
+          DEFAULT: '#C2456B',
+          dark: '#A03455',
         },
       },
       fontFamily: {

@@ -5,8 +5,11 @@ import cafeFrio from '../assets/photos/cafe-frio.webp'
 import { Eyebrow } from './Eyebrow'
 import { PillButton } from './PillButton'
 import { Reveal } from './Reveal'
+import { Carousel } from './Carousel'
 
-const FEATURED = {
+type MenuItem = { src: string; alt: string; name: string; price: string; tag?: string }
+
+const FEATURED: MenuItem = {
   src: pancakes,
   alt: 'Pancakes con plátano y chocolate',
   name: 'Pancakes de plátano y chocolate',
@@ -14,23 +17,53 @@ const FEATURED = {
   tag: 'Más pedido',
 }
 
-const ITEMS = [
+const ITEMS: MenuItem[] = [
   { src: huevos, alt: 'Huevos benedictinos', name: 'Huevos benedictinos', price: '9,90 €' },
   { src: matcha, alt: 'Matcha latte', name: 'Matcha latte', price: '4,20 €' },
   { src: cafeFrio, alt: 'Café frío', name: 'Café frío', price: '3,80 €' },
 ]
 
+const ALL_ITEMS: MenuItem[] = [FEATURED, ...ITEMS]
+
+function MenuCard({ item }: { item: MenuItem }) {
+  return (
+    <a href="#" className="group relative block aspect-[4/5] overflow-hidden rounded-3xl">
+      <img
+        src={item.src}
+        alt={item.alt}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        loading="lazy"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
+      {item.tag && (
+        <span className="absolute top-5 left-5 rounded-full bg-accent px-4 py-1.5 text-[11px] font-medium uppercase tracking-[.08em] text-cream">
+          {item.tag}
+        </span>
+      )}
+      <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-3">
+        <span className="font-serif text-[22px] font-medium leading-tight text-cream">{item.name}</span>
+        <span className="shrink-0 font-serif text-[15px] text-cream/90">{item.price}</span>
+      </div>
+    </a>
+  )
+}
+
 export function Destacados() {
   return (
-    <section id="carta" className="scroll-mt-24 bg-cream px-[6vw] py-24 md:py-[100px]">
-      <Eyebrow className="block mb-14">DESTACADOS DE LA CARTA</Eyebrow>
+    <section id="carta" className="scroll-mt-24 bg-cream border-t border-ink/15 py-24 md:py-[100px]">
+      <Eyebrow className="block mb-14 px-[6vw]">DESTACADOS DE LA CARTA</Eyebrow>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <Reveal className="md:hidden">
+        <Carousel>
+          {ALL_ITEMS.map((item) => (
+            <MenuCard key={item.name} item={item} />
+          ))}
+        </Carousel>
+      </Reveal>
+
+      <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-5 px-[6vw]">
         <Reveal className="md:col-span-3">
-          <a
-            href="#"
-            className="group relative block aspect-[4/3] overflow-hidden rounded-3xl"
-          >
+          <a href="#" className="group relative block aspect-[21/9] overflow-hidden rounded-3xl">
             <img
               src={FEATURED.src}
               alt={FEATURED.alt}

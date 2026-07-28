@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useScrolled } from '../hooks/useScrolled'
 import { PillButton } from './PillButton'
+import { Logo } from './Logo'
 
 const NAV_LINKS = [
   { href: '#quienes', label: 'Nosotros' },
@@ -17,7 +18,7 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 backdrop-blur-md transition-all duration-300 ${
         scrolled || open
-          ? 'bg-cream/95 border-b border-ink/10 shadow-[0_8px_24px_rgba(59,38,29,0.08)]'
+          ? 'bg-cream/95 border-b border-ink/10 shadow-[0_8px_24px_rgba(0,0,0,0.08)]'
           : 'bg-cream/70 border-b border-transparent'
       }`}
     >
@@ -26,8 +27,8 @@ export function Header() {
           scrolled ? 'py-3' : 'py-[18px]'
         }`}
       >
-        <a href="#" className="flex items-baseline gap-0.5 font-serif text-[21px] font-medium tracking-wide text-ink">
-          QAPHI<span className="text-accent text-2xl leading-none">.</span>
+        <a href="#" className="flex items-center">
+          <Logo className="h-6 w-auto sm:h-7" />
         </a>
 
         <nav className="hidden md:flex items-center gap-10">
