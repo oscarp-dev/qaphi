@@ -1,11 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { locations } from '../data/locations'
 import { Eyebrow } from './Eyebrow'
+import { useInView } from '../hooks/useInView'
 
 export function Ubicaciones() {
   const [selected, setSelected] = useState(0)
+  const [mapLoaded, setMapLoaded] = useState(false)
+  const { ref: mapRef, inView: mapInView } = useInView<HTMLDivElement>(0.1)
   const active = locations[selected]
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(`${active.address}, Alicante`)}&output=embed`
+
+  useEffect(() => {
+    setMapLoaded(false)
+  }, [selected])
 
   return (
     <section id="ubicaciones" className="scroll-mt-24 bg-cream border-t border-ink/15 px-[6vw] py-24 md:py-[100px] flex flex-wrap gap-14">
@@ -39,13 +46,23 @@ export function Ubicaciones() {
         </div>
       </div>
       <div className="flex-1 basis-[380px] min-w-[280px]">
-        <div className="w-full border border-ink/15 overflow-hidden aspect-[4/3] min-h-[340px]">
-          <iframe
-            src={mapSrc}
-            className="w-full h-full border-0 [filter:sepia(.12)_saturate(1.05)]"
-            loading="lazy"
-            title="Mapa de la ubicación seleccionada"
-          />
+        <div ref={mapRef} className="relative w-full border border-ink/15 overflow-hidden aspect-[4/3] min-h-[340px]">
+          <div
+            className={`absolute inset-0 flex items-center justify-center bg-bone transition-opacity duration-500 ${
+              mapLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            }`}
+          >
+            <span className="text-[12px] font-medium uppercase tracking-[.15em] text-ink/40">Cargando mapa…</span>
+          </div>
+          {mapInView && (
+            <iframe
+              src={mapSrc}
+              className="w-full h-full border-0 [filter:sepia(.12)_saturate(1.05)]"
+              loading="lazy"
+              onLoad={() => setMapLoaded(true)}
+              title="Mapa de la ubicación seleccionada"
+            />
+          )}
         </div>
       </div>
     </section>
