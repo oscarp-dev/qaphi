@@ -2,19 +2,18 @@ import { useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { menu, type MenuItem } from '../data/menu'
-import { Eyebrow } from '../components/Eyebrow'
 import { Reveal } from '../components/Reveal'
 import { Carousel } from '../components/Carousel'
 import { CategoryCards } from '../components/CategoryCards'
 
 function PhotoCard({ item }: { item: MenuItem & { image: string } }) {
   return (
-    <a href="#" className="group flex flex-col gap-6">
+    <div className="flex flex-col gap-6">
       <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
         <img
           src={item.image}
           alt={item.name}
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
         />
         {item.tag && (
@@ -30,13 +29,13 @@ function PhotoCard({ item }: { item: MenuItem & { image: string } }) {
         </div>
         {item.description && <span className="text-[14px] leading-relaxed text-ink/60">{item.description}</span>}
       </div>
-    </a>
+    </div>
   )
 }
 
 function ListRow({ item }: { item: MenuItem }) {
   return (
-    <div className="group flex items-start gap-6 py-5 border-b border-ink/10 last:border-b-0 transition-colors hover:bg-ink/[0.03]">
+    <div className="flex items-start gap-6 py-5 border-b border-ink/10 last:border-b-0">
       <div className="flex min-w-0 flex-1 flex-col gap-1.5">
         <div className="flex flex-wrap items-baseline gap-3">
           <span className="font-serif text-[18px] font-medium text-ink">{item.name}</span>
@@ -110,10 +109,10 @@ export function CartaPage() {
           >
             ← Volver al inicio
           </Link>
-          <Eyebrow className="!text-accent mt-2">LA CARTA</Eyebrow>
-          <h1 className="m-0 max-w-[620px] font-serif font-medium text-[clamp(32px,5vw,58px)] leading-[1.1] text-ink">
-            Una <span className="text-accent">carta</span> para cada momento del día.
-          </h1>
+          <h1 className="m-0 font-script text-[clamp(52px,9vw,96px)] leading-none text-accent">La Carta</h1>
+          <p className="m-0 max-w-[560px] font-serif font-medium text-[clamp(24px,3.4vw,36px)] leading-[1.2] text-ink">
+            Un momento distinto para cada hora del día.
+          </p>
           <p className="m-0 max-w-[480px] text-[15px] leading-[1.7] text-ink/65 sm:text-[16px]">
             Elige tu categoría y descubre lo que más nos piden.
           </p>

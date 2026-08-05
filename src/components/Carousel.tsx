@@ -26,7 +26,7 @@ export function Carousel({ children, className = '', slideClassName = 'basis-[84
   return (
     <div className={className}>
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex touch-pan-y gap-4 pl-[6vw] pr-[6vw]">
+        <div className="flex touch-pan-y gap-4 py-2 pl-[6vw] pr-[6vw]">
           {children.map((child, i) => (
             <div key={i} className={`min-w-0 shrink-0 grow-0 ${slideClassName}`}>
               {child}

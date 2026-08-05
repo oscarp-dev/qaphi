@@ -3,7 +3,9 @@ import huevosBenedict from '../assets/photos/tira-3.webp'
 import matchaMango from '../assets/photos/destacado-matcha.webp'
 import iceLatte from '../assets/photos/cafe-frio.webp'
 import brunchCover from '../assets/photos/tira-2.webp'
-import desayunoCover from '../assets/photos/tira-1.webp'
+import brunchCoverThumb from '../assets/photos/tira-2-thumb.webp'
+import desayunoCoverThumb from '../assets/photos/tira-1-thumb.webp'
+import specialtiesCoverThumb from '../assets/photos/tira-3-thumb.webp'
 import blueLemon from '../assets/photos/bebida-1.webp'
 import caramelIceLatte from '../assets/photos/coffee-1.webp'
 import moccaIceLatte from '../assets/photos/coffee-2.webp'
@@ -36,7 +38,7 @@ export const menu: MenuCategory[] = [
     id: 'brunch',
     label: 'Brunch',
     description: 'Combinados y platos especiales para disfrutar sin prisa.',
-    image: brunchCover,
+    image: brunchCoverThumb,
     groups: [
       {
         title: 'Brunch combinado',
@@ -61,7 +63,7 @@ export const menu: MenuCategory[] = [
     id: 'specialties',
     label: 'Specialties',
     description: 'Nuestros benedict y sandwiches de la casa, a la carta.',
-    image: huevosBenedict,
+    image: specialtiesCoverThumb,
     groups: [
       {
         title: 'Specialties',
@@ -96,7 +98,7 @@ export const menu: MenuCategory[] = [
     id: 'desayuno',
     label: 'Desayuno',
     description: 'Algo sencillo para empezar el día, café en mano.',
-    image: desayunoCover,
+    image: desayunoCoverThumb,
     groups: [
       {
         title: 'Desayunos',
