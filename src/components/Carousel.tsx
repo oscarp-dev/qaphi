@@ -1,7 +1,13 @@
 import { useCallback, useEffect, useState, type ReactNode } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 
-export function Carousel({ children, className = '' }: { children: ReactNode[]; className?: string }) {
+interface CarouselProps {
+  children: ReactNode[]
+  className?: string
+  slideClassName?: string
+}
+
+export function Carousel({ children, className = '', slideClassName = 'basis-[84%]' }: CarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false, align: 'center', dragFree: false })
   const [selected, setSelected] = useState(0)
 
@@ -22,7 +28,7 @@ export function Carousel({ children, className = '' }: { children: ReactNode[]; 
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex touch-pan-y gap-4 pl-[6vw] pr-[6vw]">
           {children.map((child, i) => (
-            <div key={i} className="min-w-0 shrink-0 grow-0 basis-[84%]">
+            <div key={i} className={`min-w-0 shrink-0 grow-0 ${slideClassName}`}>
               {child}
             </div>
           ))}

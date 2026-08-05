@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useScrolled } from '../hooks/useScrolled'
 import { PillButton } from './PillButton'
 import { Logo } from './Logo'
 
 const NAV_LINKS = [
-  { href: '#quienes', label: 'Nosotros' },
-  { href: '#cafe', label: 'Café' },
-  { href: '#carta', label: 'Carta' },
-  { href: '#ubicaciones', label: 'Ubicaciones' },
+  { href: '/#quienes', label: 'Nosotros' },
+  { href: '/#cafe', label: 'Café' },
+  { href: '/carta', label: 'Carta', isRoute: true },
+  { href: '/#ubicaciones', label: 'Ubicaciones' },
 ]
 
 export function Header() {
@@ -35,24 +36,34 @@ export function Header() {
             scrolled ? 'py-3' : 'py-[18px]'
           }`}
         >
-          <a href="#" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <Logo className="h-6 w-auto sm:h-7" />
-          </a>
+          </Link>
 
           <nav className="hidden md:flex items-center gap-10">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-[14px] font-medium uppercase tracking-[.06em] text-ink pb-1 border-b border-transparent hover:text-accent hover:border-accent transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) =>
+              link.isRoute ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-[14px] font-medium uppercase tracking-[.06em] text-ink pb-1 border-b border-transparent hover:text-accent hover:border-accent transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-[14px] font-medium uppercase tracking-[.06em] text-ink pb-1 border-b border-transparent hover:text-accent hover:border-accent transition-colors"
+                >
+                  {link.label}
+                </a>
+              ),
+            )}
           </nav>
 
           <div className="flex items-center gap-4">
-            <PillButton href="#carta" className="hidden sm:inline-flex !py-2.5 !px-6 text-[12px]">
+            <PillButton to="/carta" className="hidden sm:inline-flex !py-2.5 !px-6 text-[12px]">
               Ver la carta
             </PillButton>
             <button
@@ -77,17 +88,28 @@ export function Header() {
           open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        {NAV_LINKS.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            onClick={() => setOpen(false)}
-            className="py-3 font-serif text-[32px] font-medium text-ink hover:text-accent transition-colors"
-          >
-            {link.label}
-          </a>
-        ))}
-        <PillButton href="#carta" onClick={() => setOpen(false)} className="mt-8">
+        {NAV_LINKS.map((link) =>
+          link.isRoute ? (
+            <Link
+              key={link.href}
+              to={link.href}
+              onClick={() => setOpen(false)}
+              className="py-3 font-serif text-[32px] font-medium text-ink hover:text-accent transition-colors"
+            >
+              {link.label}
+            </Link>
+          ) : (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="py-3 font-serif text-[32px] font-medium text-ink hover:text-accent transition-colors"
+            >
+              {link.label}
+            </a>
+          ),
+        )}
+        <PillButton to="/carta" onClick={() => setOpen(false)} className="mt-8">
           Ver la carta
         </PillButton>
       </nav>

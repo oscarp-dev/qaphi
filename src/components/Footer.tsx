@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { locations } from '../data/locations'
 import { Logo } from './Logo'
 
@@ -38,10 +39,10 @@ export function Footer() {
         </div>
         <div className="flex flex-col gap-2.5">
           <span className="font-medium text-[12px] text-ink/60 tracking-[.12em]">ENLACES</span>
-          <a href="#carta" className="text-[16px] text-ink hover:text-accent transition-colors">
+          <Link to="/carta" className="text-[16px] text-ink hover:text-accent transition-colors">
             La carta
-          </a>
-          <a href="#ubicaciones" className="text-[16px] text-ink hover:text-accent transition-colors">
+          </Link>
+          <a href="/#ubicaciones" className="text-[16px] text-ink hover:text-accent transition-colors">
             Ubicaciones
           </a>
         </div>

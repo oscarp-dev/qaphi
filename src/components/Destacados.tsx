@@ -1,7 +1,8 @@
-import pancakes from '../assets/photos/hero.webp'
-import huevos from '../assets/photos/tira-3.webp'
-import matcha from '../assets/photos/destacado-matcha.webp'
-import cafeFrio from '../assets/photos/cafe-frio.webp'
+import { Link } from 'react-router-dom'
+import qaphiGarden from '../assets/photos/hero.webp'
+import huevosBenedict from '../assets/photos/tira-3.webp'
+import matchaMango from '../assets/photos/destacado-matcha.webp'
+import iceLatte from '../assets/photos/cafe-frio.webp'
 import { Eyebrow } from './Eyebrow'
 import { PillButton } from './PillButton'
 import { Reveal } from './Reveal'
@@ -10,24 +11,24 @@ import { Carousel } from './Carousel'
 type MenuItem = { src: string; alt: string; name: string; price: string; tag?: string }
 
 const FEATURED: MenuItem = {
-  src: pancakes,
-  alt: 'Pancakes con plátano y chocolate',
-  name: 'Pancakes de plátano y chocolate',
-  price: '8,50 €',
-  tag: 'Más pedido',
+  src: qaphiGarden,
+  alt: 'Qaphi Garden — torre de tortitas con nocilla y frutos rojos',
+  name: 'Qaphi Garden',
+  price: '10,50 €',
+  tag: 'Más vendido',
 }
 
 const ITEMS: MenuItem[] = [
-  { src: huevos, alt: 'Huevos benedictinos', name: 'Huevos benedictinos', price: '9,90 €' },
-  { src: matcha, alt: 'Matcha latte', name: 'Matcha latte', price: '4,20 €' },
-  { src: cafeFrio, alt: 'Café frío', name: 'Café frío', price: '3,80 €' },
+  { src: huevosBenedict, alt: 'Huevos Benedict', name: 'Huevos Benedict', price: '9,90 €' },
+  { src: matchaMango, alt: 'Matcha Mango', name: 'Matcha Mango', price: '4,50 €' },
+  { src: iceLatte, alt: 'Ice Latte', name: 'Ice Latte', price: '3,50 €' },
 ]
 
 const ALL_ITEMS: MenuItem[] = [FEATURED, ...ITEMS]
 
 function MenuCard({ item }: { item: MenuItem }) {
   return (
-    <a href="#" className="group relative block aspect-[4/5] overflow-hidden rounded-3xl">
+    <Link to="/carta" className="group relative block aspect-[4/5] overflow-hidden rounded-3xl">
       <img
         src={item.src}
         alt={item.alt}
@@ -44,13 +45,13 @@ function MenuCard({ item }: { item: MenuItem }) {
         <span className="font-serif text-[22px] font-medium leading-tight text-cream">{item.name}</span>
         <span className="shrink-0 font-serif text-[15px] text-cream/90">{item.price}</span>
       </div>
-    </a>
+    </Link>
   )
 }
 
 export function Destacados() {
   return (
-    <section id="carta" className="scroll-mt-24 bg-cream border-t border-ink/15 py-24 md:py-[100px]">
+    <section id="destacados" className="scroll-mt-24 bg-cream border-t border-ink/15 py-24 md:py-[100px]">
       <Eyebrow className="block mb-14 px-[6vw]">DESTACADOS DE LA CARTA</Eyebrow>
 
       <Reveal className="md:hidden">
@@ -63,7 +64,7 @@ export function Destacados() {
 
       <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-5 px-[6vw]">
         <Reveal className="md:col-span-3">
-          <a href="#" className="group relative block aspect-[21/9] overflow-hidden rounded-3xl">
+          <Link to="/carta" className="group relative block aspect-[21/9] overflow-hidden rounded-3xl">
             <img
               src={FEATURED.src}
               alt={FEATURED.alt}
@@ -87,12 +88,12 @@ export function Destacados() {
                 </span>
               </span>
             </div>
-          </a>
+          </Link>
         </Reveal>
 
         {ITEMS.map((item, i) => (
           <Reveal key={item.name} delay={(i + 1) * 80}>
-            <a href="#" className="group relative block aspect-[4/5] overflow-hidden rounded-3xl">
+            <Link to="/carta" className="group relative block aspect-[4/5] overflow-hidden rounded-3xl">
               <img
                 src={item.src}
                 alt={item.alt}
@@ -104,13 +105,13 @@ export function Destacados() {
                 <span className="font-serif text-[22px] font-medium leading-tight text-cream">{item.name}</span>
                 <span className="shrink-0 font-serif text-[15px] text-cream/90">{item.price}</span>
               </div>
-            </a>
+            </Link>
           </Reveal>
         ))}
       </div>
 
       <div className="flex justify-center">
-        <PillButton href="#" className="mt-16">
+        <PillButton to="/carta" className="mt-16">
           Ver la carta completa
         </PillButton>
       </div>

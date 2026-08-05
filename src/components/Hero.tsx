@@ -39,7 +39,7 @@ export function Hero() {
           className="flex flex-wrap items-center justify-center gap-4 mt-2 animate-fade-up motion-reduce:animate-none"
           style={{ animationDelay: '260ms' }}
         >
-          <PillButton href="#carta" variant="solid">
+          <PillButton to="/carta" variant="solid">
             Ver la carta
           </PillButton>
           <PillButton href="#ubicaciones" variant="glass">
