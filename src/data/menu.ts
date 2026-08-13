@@ -10,6 +10,7 @@ import blueLemon from '../assets/photos/bebida-1.webp'
 import caramelIceLatte from '../assets/photos/coffee-1.webp'
 import moccaIceLatte from '../assets/photos/coffee-2.webp'
 import qaphiTropical from '../assets/photos/dulce-1.webp'
+import sandwichKoreano from '../assets/photos/koreano.png'
 
 export interface MenuItem {
   name: string
@@ -48,11 +49,15 @@ export const menu: MenuCategory[] = [
             name: 'Brunch Clásico',
             price: '9,50 €',
             description: 'Café + tostada + 1 extra + zumo de naranja + bol de yogur y 1 mini.',
+          },
+          { name: 'Brunch Qaphi', price: '13,90 €', description: 'Café + 2 huevos fritos + bacon + pan de hogaza + zumo de naranja + bol de yogur y 1 mini.' },
+          {
+            name: 'Brunch Benedict',
+            price: '18,80 €',
+            description: 'Café + huevos benedictos + zumo de naranja + bol de yogur y 1 mini.',
             image: brunchCover,
             tag: 'Más vendido',
           },
-          { name: 'Brunch Qaphi', price: '13,90 €', description: 'Café + 2 huevos fritos + bacon + pan de hogaza + zumo de naranja + bol de yogur y 1 mini.' },
-          { name: 'Brunch Benedict', price: '18,80 €', description: 'Café + huevos benedictos + zumo de naranja + bol de yogur y 1 mini.' },
           { name: 'Brunch Noruego', price: '19,80 €', description: 'Café + huevos benedictos con salmón + zumo de naranja + bol de yogur y 1 mini.' },
           { name: 'Brunch Koreano', price: '17,80 €', description: 'Café + sandwich koreano + zumo de naranja + bol de yogur y 1 mini.' },
         ],
@@ -89,6 +94,8 @@ export const menu: MenuCategory[] = [
             name: 'Sandwich Koreano',
             price: '8,90 €',
             description: 'Pan de brioche, queso edam, jamón york, huevos revueltos, mayonesa y cebollino.',
+            image: sandwichKoreano,
+            tag: 'Más vendido',
           },
         ],
       },
@@ -217,8 +224,6 @@ export const menu: MenuCategory[] = [
             name: 'Matcha Mango',
             price: '4,50 €',
             description: 'Matcha ceremonial con puré de mango.',
-            image: matchaMango,
-            tag: 'Más vendido',
           },
           { name: 'Matcha Strawberries', price: '4,50 €' },
         ],
@@ -227,11 +232,11 @@ export const menu: MenuCategory[] = [
         title: 'Café frío',
         note: 'Leches especiales (sin lactosa, avena o soja) +0,20 € · Extra de hielo +0,10 €.',
         items: [
-          { name: 'Ice Latte', price: '3,50 €', image: iceLatte, tag: 'Más vendido' },
-          { name: 'Caramel Ice Latte', price: '4,50 €', image: caramelIceLatte },
+          { name: 'Ice Latte', price: '3,50 €', image: iceLatte },
+          { name: 'Caramel Ice Latte', price: '4,50 €', image: caramelIceLatte, tag: 'Más vendido' },
           { name: 'Mocca Ice Latte', price: '4,50 €', image: moccaIceLatte },
           { name: 'Matcha Ice Latte', price: '4,70 €' },
-          { name: 'Matcha Ice Strawberries', price: '5,00 €' },
+          { name: 'Matcha Ice Strawberries', price: '5,00 €', image: matchaMango, tag: 'Más vendido' },
           { name: 'Matcha Ice Mango', price: '5,00 €' },
         ],
       },
