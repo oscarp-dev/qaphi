@@ -57,7 +57,7 @@ export function NuestroCafe() {
         </dl>
       </Reveal>
 
-      <Reveal delay={150} className="relative flex-none w-[min(48vw,440px)] max-w-full">
+      <Reveal delay={150} className="relative flex-none w-full max-w-[380px] sm:w-[min(48vw,440px)] sm:max-w-full">
         <div className="relative aspect-[4/5] overflow-hidden border border-ink/15">
           <img
             src={cafeBolsas}
@@ -85,7 +85,7 @@ export function NuestroCafe() {
           initial={{ rotate: 5 }}
           whileHover={reduceMotion ? undefined : { rotate: 0, scale: 1.03 }}
           transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-          className="hidden sm:block absolute -right-[7%] -top-[8%] w-[34%] aspect-square overflow-hidden border-[6px] border-cream shadow-[0_14px_30px_rgba(0,0,0,0.22)]"
+          className="absolute -right-[7%] -top-[8%] w-[34%] aspect-square overflow-hidden border-[6px] border-cream shadow-[0_14px_30px_rgba(0,0,0,0.22)]"
         >
           <img
             src={cafeBolsa}
