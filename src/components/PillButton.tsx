@@ -1,4 +1,4 @@
-import type { AnchorHTMLAttributes } from 'react'
+import type { AnchorHTMLAttributes, MouseEventHandler } from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Link, type LinkProps } from 'react-router-dom'
 
@@ -29,10 +29,18 @@ export function PillButton({ variant = 'solid', className = '', children, href, 
         <Link to={to} className={classes} {...props}>
           {children}
         </Link>
-      ) : (
+      ) : href ? (
         <a href={href} className={classes} {...props}>
           {children}
         </a>
+      ) : (
+        <button
+          type="button"
+          className={classes}
+          onClick={props.onClick as unknown as MouseEventHandler<HTMLButtonElement>}
+        >
+          {children}
+        </button>
       )}
     </motion.div>
   )

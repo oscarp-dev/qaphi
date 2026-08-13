@@ -6,6 +6,7 @@ import { Declaracion } from '../components/Declaracion'
 import { Destacados } from '../components/Destacados'
 import { Pausa } from '../components/Pausa'
 import { Ubicaciones } from '../components/Ubicaciones'
+import { Resenas } from '../components/Resenas'
 
 export function Home() {
   return (
@@ -17,6 +18,7 @@ export function Home() {
       <Declaracion />
       <Destacados />
       <Pausa />
+      <Resenas />
       <Ubicaciones />
     </>
   )
