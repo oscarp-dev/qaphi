@@ -1,6 +1,6 @@
 export function RotatingBadge({ className = '' }: { className?: string }) {
   return (
-    <div className={`relative drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)] ${className}`} aria-hidden="true">
+    <div className={`drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)] ${className}`} aria-hidden="true">
       <svg viewBox="0 0 100 100" className="w-full h-full animate-spin-slow motion-reduce:animate-none">
         <circle cx="50" cy="50" r="49" fill="#C2456B" />
         <defs>
