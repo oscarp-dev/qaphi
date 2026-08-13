@@ -10,7 +10,7 @@ import blueLemon from '../assets/photos/bebida-1.webp'
 import caramelIceLatte from '../assets/photos/coffee-1.webp'
 import moccaIceLatte from '../assets/photos/coffee-2.webp'
 import qaphiTropical from '../assets/photos/dulce-1.webp'
-import sandwichKoreano from '../assets/photos/koreano.png'
+import sandwichKoreano from '../assets/photos/koreano.webp'
 
 export interface MenuItem {
   name: string

@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import cafeBolsas from '../assets/photos/cafe-bolsas.jpg'
+import cafeBolsas from '../assets/photos/cafe-bolsas.webp'
 import cafeBolsa from '../assets/photos/cafe-bolsa.webp'
 import cafeDetalle from '../assets/photos/cafe-detalle.webp'
 import { Eyebrow } from './Eyebrow'
