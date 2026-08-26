@@ -7,8 +7,16 @@ import { Destacados } from '../components/Destacados'
 import { Pausa } from '../components/Pausa'
 import { Ubicaciones } from '../components/Ubicaciones'
 import { Resenas } from '../components/Resenas'
+import { useSeo } from '../hooks/useSeo'
 
 export function Home() {
+  useSeo({
+    title: 'Qaphi — Cafetería y Brunch en Alicante',
+    description:
+      'Cafetería en Alicante con brunch de temporada, café de tueste propio y repostería casera. Dos locales: Plaza de Toros y San Blas.',
+    path: '/',
+  })
+
   return (
     <>
       <Hero />

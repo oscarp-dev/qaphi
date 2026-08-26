@@ -32,6 +32,7 @@ export function Hero() {
             <Logo
               className="h-[clamp(72px,20vw,150px)] w-auto md:h-[clamp(56px,7.4vw,120px)] animate-fade-up motion-reduce:animate-none"
               style={{ animationDelay: '120ms' }}
+              alt="Qaphi — Cafetería y Brunch en Alicante"
             />
           </h1>
         </div>

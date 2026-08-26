@@ -4,6 +4,7 @@ import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { ScrollToTop } from './components/ScrollToTop'
 import { CookieBanner } from './components/CookieBanner'
+import { StructuredData } from './components/StructuredData'
 import { CookieConsentProvider } from './context/CookieConsent'
 import { Home } from './pages/Home'
 import { CartaPage } from './pages/CartaPage'
@@ -15,6 +16,7 @@ function App() {
   return (
     <CookieConsentProvider>
       <div className="bg-cream text-ink">
+        <StructuredData />
         <ScrollToTop />
         <Loader />
         <Header />

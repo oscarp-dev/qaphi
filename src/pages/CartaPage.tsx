@@ -5,6 +5,7 @@ import { menu, type MenuItem } from '../data/menu'
 import { Reveal } from '../components/Reveal'
 import { Carousel } from '../components/Carousel'
 import { CategoryCards } from '../components/CategoryCards'
+import { useSeo } from '../hooks/useSeo'
 
 function PhotoCard({ item }: { item: MenuItem & { image: string } }) {
   return (
@@ -87,6 +88,13 @@ function GroupPanel({ group }: { group: (typeof menu)[number]['groups'][number] 
 }
 
 export function CartaPage() {
+  useSeo({
+    title: 'La Carta — Café, Brunch y Dulces | Qaphi Alicante',
+    description:
+      'Descubre la carta de Qaphi: café, brunch, batidos y repostería casera en nuestras cafeterías de Plaza de Toros y San Blas, Alicante.',
+    path: '/carta',
+  })
+
   const [active, setActive] = useState(menu[0].id)
   const category = menu.find((c) => c.id === active) ?? menu[0]
   const reduceMotion = useReducedMotion()

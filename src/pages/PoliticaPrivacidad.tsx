@@ -1,14 +1,20 @@
 import { LegalPage, LegalSection, Placeholder } from '../components/LegalPage'
+import { useSeo } from '../hooks/useSeo'
 
 export function PoliticaPrivacidadPage() {
+  useSeo({
+    title: 'Política de Privacidad | Qaphi Alicante',
+    description: 'Política de privacidad y protección de datos del sitio web de Qaphi, cafetería en Alicante.',
+    path: '/politica-privacidad',
+  })
+
   return (
     <LegalPage title="Política de Privacidad">
       <LegalSection title="1. Responsable del tratamiento">
         <p className="m-0">
-          <Placeholder>razón social / nombre del titular</Placeholder>, con NIF/CIF{' '}
-          <Placeholder>NIF o CIF</Placeholder>, domicilio en Av. Alcalde Alfonso de Rojas, 6, 03004 Alicante y email
-          de contacto hola@qaphi.com, es la responsable del tratamiento de los datos personales que nos facilites a
-          través de este sitio web.
+          Nayla Emma Palacios Tamayo, con NIF 02380245K, domicilio en Av. Alcalde Alfonso de Rojas, 6, 03004 Alicante
+          y email de contacto hola@qaphi.com, es la responsable del tratamiento de los datos personales que nos
+          facilites a través de este sitio web.
         </p>
       </LegalSection>
 
@@ -55,8 +61,6 @@ export function PoliticaPrivacidadPage() {
           cuando ya no sea necesario se suprimirán con medidas de seguridad adecuadas.
         </p>
       </LegalSection>
-
-      <p className="m-0 text-[13px] text-ink/45">Última actualización: <Placeholder>fecha</Placeholder>.</p>
     </LegalPage>
   )
 }

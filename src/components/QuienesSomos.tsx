@@ -9,7 +9,7 @@ export function QuienesSomos() {
         <div className="relative aspect-[2/3] w-full overflow-hidden rounded-[2rem] shadow-[0_20px_45px_rgba(0,0,0,0.22)]">
           <img
             src={quienesSomos}
-            alt="Barra de Qaphi con café de especialidad y bebidas de matcha"
+            alt="Barra de Qaphi con café y bebidas de matcha"
             className="absolute inset-0 h-full w-full object-cover"
             loading="lazy"
           />

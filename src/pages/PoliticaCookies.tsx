@@ -1,8 +1,15 @@
 import { useCookieConsent } from '../context/CookieConsent'
 import { LegalPage, LegalSection, Placeholder } from '../components/LegalPage'
 import { PillButton } from '../components/PillButton'
+import { useSeo } from '../hooks/useSeo'
 
 export function PoliticaCookiesPage() {
+  useSeo({
+    title: 'Política de Cookies | Qaphi Alicante',
+    description: 'Información sobre el uso de cookies en el sitio web de Qaphi, cafetería en Alicante.',
+    path: '/politica-cookies',
+  })
+
   const { status, openPreferences } = useCookieConsent()
 
   return (
@@ -60,8 +67,6 @@ export function PoliticaCookiesPage() {
           {status === null ? 'Elegir preferencias de cookies' : 'Cambiar mis preferencias de cookies'}
         </PillButton>
       </LegalSection>
-
-      <p className="m-0 text-[13px] text-ink/45">Última actualización: <Placeholder>fecha</Placeholder>.</p>
     </LegalPage>
   )
 }
