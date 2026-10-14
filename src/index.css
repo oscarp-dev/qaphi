@@ -5,11 +5,12 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   body {
-    @apply bg-cream text-ink font-sans font-light antialiased overflow-x-hidden;
+    @apply bg-cream text-ink font-sans font-light antialiased;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
   }
 

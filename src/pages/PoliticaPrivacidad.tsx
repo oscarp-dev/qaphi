@@ -13,7 +13,7 @@ export function PoliticaPrivacidadPage() {
       <LegalSection title="1. Responsable del tratamiento">
         <p className="m-0">
           Nayla Emma Palacios Tamayo, con NIF 02380245K, domicilio en Av. Alcalde Alfonso de Rojas, 6, 03004 Alicante
-          y email de contacto hola@qaphi.com, es la responsable del tratamiento de los datos personales que nos
+          y teléfono de contacto +34 678 81 79 17, es la responsable del tratamiento de los datos personales que nos
           facilites a través de este sitio web.
         </p>
       </LegalSection>
@@ -49,7 +49,7 @@ export function PoliticaPrivacidadPage() {
         <p className="m-0">
           Cualquier persona tiene derecho a obtener confirmación sobre si en Qaphi estamos tratando datos personales
           que le conciernan, y a ejercer sus derechos de acceso, rectificación, supresión, oposición, limitación del
-          tratamiento y portabilidad, escribiendo a hola@qaphi.com. Asimismo, tenés derecho a presentar una
+          tratamiento y portabilidad, llamando al +34 678 81 79 17. Asimismo, tenés derecho a presentar una
           reclamación ante la Agencia Española de Protección de Datos (AEPD) si considerás que el tratamiento no se
           ajusta a la normativa vigente.
         </p>

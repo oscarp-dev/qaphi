@@ -52,9 +52,9 @@ export const reviews: Review[] = [
   {
     locationId: 'san-blas',
     author: 'Diego A.',
-    rating: 4,
+    rating: 5,
     date: 'Hace 1 mes',
-    text: 'Ambiente muy cuidado y personal atento. Un poco de espera los domingos por la mañana, pero se entiende porque siempre está lleno.',
+    text: 'Ambiente muy cuidado y un personal encantador. Una tostada con aguacate y un Capuchino Qaphi de vainilla por la mañana son mi plan perfecto antes de ir a trabajar.',
   },
   {
     locationId: 'san-blas',

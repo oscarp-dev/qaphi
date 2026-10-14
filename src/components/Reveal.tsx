@@ -14,7 +14,7 @@ export function Reveal({ children, className = '', delay = 0 }: RevealProps) {
     <div
       ref={ref}
       className={`transition-all duration-700 ease-out motion-reduce:transition-none ${
-        inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+        inView ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-6 blur-[3px]'
       } ${className}`}
       style={{ transitionDelay: inView ? `${delay}ms` : '0ms' }}
     >

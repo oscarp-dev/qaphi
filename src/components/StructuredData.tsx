@@ -1,5 +1,6 @@
 import { locations } from '../data/locations'
 import { SITE_URL, DEFAULT_OG_IMAGE } from '../lib/seo'
+import { PHONE } from '../lib/contact'
 
 export function StructuredData() {
   const businesses = locations.map((loc) => ({
@@ -8,8 +9,7 @@ export function StructuredData() {
     name: loc.name,
     image: DEFAULT_OG_IMAGE,
     url: SITE_URL,
-    telephone: '+34687288176',
-    email: 'hola@qaphi.com',
+    telephone: PHONE,
     priceRange: '€€',
     servesCuisine: ['Café', 'Brunch', 'Repostería'],
     address: {

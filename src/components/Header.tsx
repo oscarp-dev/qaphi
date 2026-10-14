@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { href: '/#quienes', label: 'Nosotros' },
   { href: '/#cafe', label: 'Café' },
   { href: '/carta', label: 'Carta', isRoute: true },
+  { href: '/#eventos', label: 'Eventos' },
   { href: '/#ubicaciones', label: 'Ubicaciones' },
 ]
 

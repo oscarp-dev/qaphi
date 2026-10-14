@@ -7,6 +7,7 @@ import { Destacados } from '../components/Destacados'
 import { Pausa } from '../components/Pausa'
 import { Ubicaciones } from '../components/Ubicaciones'
 import { Resenas } from '../components/Resenas'
+import { Eventos } from '../components/Eventos'
 import { useSeo } from '../hooks/useSeo'
 
 export function Home() {
@@ -26,6 +27,7 @@ export function Home() {
       <Declaracion />
       <Destacados />
       <Pausa />
+      <Eventos />
       <Resenas />
       <Ubicaciones />
     </>

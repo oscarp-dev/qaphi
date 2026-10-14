@@ -15,7 +15,7 @@ export function AvisoLegalPage() {
           En cumplimiento de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico
           (LSSI-CE), se informa de los siguientes datos: el titular de este sitio web es Nayla Emma Palacios Tamayo,
           con NIF 02380245K y domicilio en Av. Alcalde Alfonso de Rojas, 6, 03004 Alicante.
-          Datos de contacto: hola@qaphi.com · +34 687 28 81 76.
+          Teléfono de contacto: +34 678 81 79 17.
         </p>
       </LegalSection>
 

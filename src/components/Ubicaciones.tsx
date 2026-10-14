@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { locations } from '../data/locations'
+import { locations, isOpenNow } from '../data/locations'
 import { useCookieConsent } from '../context/CookieConsent'
 import { Eyebrow } from './Eyebrow'
 import { PillButton } from './PillButton'
@@ -8,6 +8,7 @@ import { useInView } from '../hooks/useInView'
 export function Ubicaciones() {
   const [selected, setSelected] = useState(0)
   const [mapLoaded, setMapLoaded] = useState(false)
+  const [now, setNow] = useState(() => new Date())
   const { ref: mapRef, inView: mapInView } = useInView<HTMLDivElement>(0.1)
   const { status, accept } = useCookieConsent()
   const active = locations[selected]
@@ -17,6 +18,11 @@ export function Ubicaciones() {
     setMapLoaded(false)
   }, [selected])
 
+  useEffect(() => {
+    const id = window.setInterval(() => setNow(new Date()), 60_000)
+    return () => window.clearInterval(id)
+  }, [])
+
   return (
     <section id="ubicaciones" className="scroll-mt-24 bg-cream border-t border-ink/15 px-[6vw] py-24 md:py-[100px] flex flex-wrap gap-14">
       <div className="flex-1 basis-[380px]">
@@ -24,6 +30,7 @@ export function Ubicaciones() {
         <div className="border-t border-ink/15">
           {locations.map((loc, i) => {
             const isActive = i === selected
+            const open = isOpenNow(loc, now)
             return (
               <button
                 key={loc.name}
@@ -37,8 +44,23 @@ export function Ubicaciones() {
                 <span className={`w-2 h-2 mt-2.5 rounded-full transition-colors ${isActive ? 'bg-accent' : 'bg-ink/25'}`} />
                 <span className="text-[14px] font-light text-ink/45">{String(i + 1).padStart(2, '0')}</span>
                 <span className="flex flex-col gap-1.5">
-                  <span className={`font-serif text-[28px] font-medium transition-colors ${isActive ? 'text-accent' : 'text-ink'}`}>
-                    {loc.name}
+                  <span className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                    <span className={`font-serif text-[28px] font-medium transition-colors ${isActive ? 'text-accent' : 'text-ink'}`}>
+                      {loc.name}
+                    </span>
+                    <span
+                      className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-medium uppercase tracking-[.1em] ${
+                        open ? 'bg-emerald-600/10 text-emerald-700' : 'bg-ink/5 text-ink/50'
+                      }`}
+                    >
+                      <span className="relative flex h-2 w-2">
+                        {open && (
+                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60 motion-reduce:animate-none" />
+                        )}
+                        <span className={`relative inline-flex h-2 w-2 rounded-full ${open ? 'bg-emerald-500' : 'bg-ink/30'}`} />
+                      </span>
+                      {open ? 'Abierto ahora' : 'Cerrado'}
+                    </span>
                   </span>
                   <span className="text-[16px] text-ink/65">{loc.address}</span>
                   <span className="text-[16px] text-ink/65">{loc.hours}</span>

@@ -16,9 +16,9 @@ export interface Location {
   mapsUrl: string
 }
 
-const WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-const WEEKEND = ['Saturday', 'Sunday']
-const ALL_WEEK = [...WEEKDAYS, ...WEEKEND]
+const MON_SAT = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+const MON_WED = ['Monday', 'Tuesday', 'Wednesday']
+const MON_THU = [...MON_WED, 'Thursday']
 
 export const locations: Location[] = [
   {
@@ -27,10 +27,10 @@ export const locations: Location[] = [
     postalCode: '03004',
     lat: 38.3522425,
     lng: -0.4865854,
-    hours: 'Lun–Vie 8:00–19:00 · Sáb–Dom 9:00–20:00',
+    hours: 'Lun–Sáb 8:00–13:00 · Lun–Mié 17:00–20:00 · Dom cerrado',
     openingHours: [
-      { days: WEEKDAYS, opens: '08:00', closes: '19:00' },
-      { days: WEEKEND, opens: '09:00', closes: '20:00' },
+      { days: MON_SAT, opens: '08:00', closes: '13:00' },
+      { days: MON_WED, opens: '17:00', closes: '20:00' },
     ],
     cid: '10344719713758699532',
     mapsUrl: 'https://maps.app.goo.gl/KAmRsdCKRwUUT1yD8',
@@ -41,9 +41,27 @@ export const locations: Location[] = [
     postalCode: '03005',
     lat: 38.348015,
     lng: -0.4997652,
-    hours: 'Todos los días 8:30–18:00',
-    openingHours: [{ days: ALL_WEEK, opens: '08:30', closes: '18:00' }],
+    hours: 'Lun–Sáb 8:00–13:00 · Lun–Jue 17:00–20:00 · Dom cerrado',
+    openingHours: [
+      { days: MON_SAT, opens: '08:00', closes: '13:00' },
+      { days: MON_THU, opens: '17:00', closes: '20:00' },
+    ],
     cid: '13728232508123488660',
     mapsUrl: 'https://maps.app.goo.gl/vdHgeyqod19UV18h7',
   },
 ]
+
+export function isOpenNow(loc: Location, date = new Date()) {
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Madrid',
+    weekday: 'long',
+    hour: '2-digit',
+    minute: '2-digit',
+    hourCycle: 'h23',
+  }).formatToParts(date)
+  const get = (type: string) => parts.find((p) => p.type === type)?.value ?? ''
+  const day = get('weekday')
+  const time = `${get('hour')}:${get('minute')}`
+
+  return loc.openingHours.some((oh) => oh.days.includes(day) && time >= oh.opens && time < oh.closes)
+}
