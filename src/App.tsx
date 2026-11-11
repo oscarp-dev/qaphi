@@ -8,6 +8,8 @@ import { StructuredData } from './components/StructuredData'
 import { CookieConsentProvider } from './context/CookieConsent'
 import { Home } from './pages/Home'
 import { CartaPage } from './pages/CartaPage'
+import { MesaPage } from './pages/MesaPage'
+import { PartnerPage } from './pages/PartnerPage'
 import { AvisoLegalPage } from './pages/AvisoLegal'
 import { PoliticaPrivacidadPage } from './pages/PoliticaPrivacidad'
 import { PoliticaCookiesPage } from './pages/PoliticaCookies'
@@ -24,6 +26,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/carta" element={<CartaPage />} />
+            <Route path="/mesa" element={<MesaPage />} />
+            <Route path="/partner" element={<PartnerPage />} />
             <Route path="/aviso-legal" element={<AvisoLegalPage />} />
             <Route path="/politica-privacidad" element={<PoliticaPrivacidadPage />} />
             <Route path="/politica-cookies" element={<PoliticaCookiesPage />} />

@@ -11,6 +11,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://qaphi.es/partner</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://qaphi.es/aviso-legal</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>

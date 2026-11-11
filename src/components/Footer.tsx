@@ -97,6 +97,9 @@ export function Footer() {
           <a href="/#ubicaciones" className="text-[15px] text-ink hover:text-accent transition-colors">
             Ubicaciones
           </a>
+          <Link to="/partner" className="text-[15px] text-ink hover:text-accent transition-colors">
+            Qaphi Partner
+          </Link>
         </AnimatedColumn>
       </div>
 
